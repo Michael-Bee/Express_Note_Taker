@@ -16,45 +16,44 @@ app.get('/notes', (req,res) =>
     res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
-//Routes: 
-// (app.GET request to see notes) 
+////Routes: 
+// (GET to see all notes) 
 app.get('/api/notes', (req, res) => {
     console.info(`${req.method} request received for notes`);
-    readFromFile('./db/notes.json').then((data) => res.json(JSON.parse(data)));
-  });
+    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
+});
 
-// (app.POST request to add note) 
+// (POST to add note) 
 app.post('/api/notes', (req, res) => {
     console.info(`${req.method} request received to add a note`);
-  
+
     const { title, text } = req.body;
-  
+
     if (title && text) {
-      const newNote = {
-        title,
-        text,
-        id: uuid(),
-      };
-  
-      readAndAppend(newTip, './db/tips.json');
-      res.json(`Tip added successfully 🚀`);
+        const newNote = {
+            title,
+            text,
+            id: uuid(),
+        };
+
+    readAndAppend(newNote, './db/db.json');
+
+        res.json(`Note added successfully 🚀`);
     } else {
-      res.error('Error in adding tip');
+        res.error('Error in adding note');
     }
-  });
+});
 
-// //(fs.READ request to see notes) 
-
-// //(fs.WRITE to update notes)
-
-// (app.DELETE to remove notes)
-
+// (DELETE to remove notes)
+app.delete('/user', (req, res) => {
+    res.send('Got a DELETE request at /user')
+})
 
 
 
-// GET Route for homepage
+//// GET Route for homepage
 app.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/index.html'))
+    res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 
 app.listen(PORT, () =>
