@@ -23,7 +23,7 @@
 ## <span id="links">Links:</span>
 GitHub Repository: https://github.com/Michael-Bee/Team_Profile_Generator
 
-Deployed Sample HTML: https://michael-bee.github.io/Express_Note_Taker/
+Deployed Website: https://notertaker.herokuapp.com/
 
 
 ## <span id="screenshot">Screenshot:</span>
@@ -63,7 +63,6 @@ An application that can be used to write and save notes. This application will u
 
 
 ## <span id="testing">Testing:</span>
-
 
 
 ## <span id="contact">Questions:</span>
