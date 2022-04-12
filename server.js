@@ -17,9 +17,13 @@ app.get('/notes', (req,res) =>
 
 //Routes: 
 // (app.GET request to see notes) 
+
 // (app.POST request to add note) 
+
 // //(fs.READ request to see notes) 
+
 // //(fs.WRITE to update notes)
+
 // (app.DELETE to remove notes)
 
 
