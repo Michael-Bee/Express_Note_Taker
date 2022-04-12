@@ -18,8 +18,30 @@ app.get('/notes', (req,res) =>
 
 //Routes: 
 // (app.GET request to see notes) 
+app.get('/api/notes', (req, res) => {
+    console.info(`${req.method} request received for notes`);
+    readFromFile('./db/notes.json').then((data) => res.json(JSON.parse(data)));
+  });
 
 // (app.POST request to add note) 
+app.post('/api/notes', (req, res) => {
+    console.info(`${req.method} request received to add a note`);
+  
+    const { title, text } = req.body;
+  
+    if (title && text) {
+      const newNote = {
+        title,
+        text,
+        id: uuid(),
+      };
+  
+      readAndAppend(newTip, './db/tips.json');
+      res.json(`Tip added successfully 🚀`);
+    } else {
+      res.error('Error in adding tip');
+    }
+  });
 
 // //(fs.READ request to see notes) 
 
