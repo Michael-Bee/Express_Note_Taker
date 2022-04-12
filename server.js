@@ -62,7 +62,7 @@ app.post('/api/notes', (req, res) => {
 });
 
 // (DELETE to remove notes)
-app.delete('/user', (req, res) => {
+app.delete('api/notes:id', (req, res) => {
     console.info(`${req.method} request received to DELETE a note`);
     fs.readFile('./db/db.json', 'utf8', (err, data) => {
         if (err) {
@@ -72,7 +72,7 @@ app.delete('/user', (req, res) => {
 
         const id = parsedData.findIndex(({id}) => id === req.params.id);
         if (id >= 0) {
-            parsedNotes.splice(id, 1);
+            parsedData.splice(id, 1);
         }
         fs.writeFile('./db/db.json', JSON.stringify(parsedData, null, 4), (err) =>
             err ? console.error(err) : console.info(`Note deleted successfully 🚀`))
