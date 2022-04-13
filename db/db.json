@@ -7,5 +7,10 @@
         "title": "Groceries",
         "text": "get groceries, remember to get stamps",
         "id": "a7bb"
+    },
+    {
+        "title": "Garbage Day",
+        "text": "Put out garbage cans, recycling, and yard waste.",
+        "id": "1a5b"
     }
 ]

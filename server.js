@@ -1,9 +1,10 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const app = express();
 const uuid = require('./helpers/uuid');
 const PORT = process.env.port || 3001;
-const app = express();
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
@@ -45,7 +46,7 @@ app.post('/api/notes', (req, res) => {
                 
                 parsedData.push(newNote);
                 fs.writeFile('./db/db.json', JSON.stringify(parsedData, null, 4), (err) =>
-                    err ? console.error(err) : console.info(`\nData written to ${destination}`)
+                    err ? console.error(err) : console.info(`Success!`)
                 );
             }
         });

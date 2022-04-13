@@ -27,7 +27,10 @@ Deployed Website: https://notertaker.herokuapp.com/
 
 
 ## <span id="screenshot">Screenshot:</span>
-![Express Note Taker Screenshot]()
+![Express Note Taker Screenshot](/public/assets/NoteTakerStart.png)
+![Express Note Taker Screenshot](/public/assets/NoteTakerHome.png)
+![Express Note Taker Screenshot](/public/assets/NoteTakerGroceries.png)
+![Express Note Taker Screenshot](/public/assets/NoteTakerGarbageDay.png)
 
 
 ## <span id="description">Description:</span>
